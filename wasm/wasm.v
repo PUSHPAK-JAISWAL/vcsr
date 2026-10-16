@@ -430,11 +430,11 @@ pub fn inspect(bytes []u8) !Module {
 	dom := if uses_externref { DomAbi.externref } else { DomAbi.handle_table }
 
 	return Module{
-		kind:    kind
-		exports: Symbols{
+		kind:                      kind
+		exports:                   Symbols{
 			syms: exports
 		}
-		imports: ImportSet{
+		imports:                   ImportSet{
 			imps: imports
 		}
 		// a SIDE module that imports __memory_base places its data relative to it.
